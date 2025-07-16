@@ -9,9 +9,9 @@
 - **Requirements.txt**: Lists all dependencies.
 - **Datasets/**: CSVs organized as `<dataset>/fold=<n>_train.csv` and `fold=<n>_test.csv`.
 - **Notebooks/**:
-  - **OrderIndependentOCT\_ExampleNotebook.ipynb**: Runnable end‑to‑end example (method can be chosen using the selection parameter, amongst CompactOCT -1- , POCT-2-, BPOCT-3-, or left as defualt -0- which uses the hybrid method described in the paper, OrderIndependentOCT) .
+  - **OrderIndependentOCT\_ExampleNotebook.ipynb**: Runnable end‑to‑end example (method can be chosen using the selection parameter, amongst CompactOCT -1- , POCT-2-, BPOCT-3-, or left as default -0- which uses the hybrid method described in the paper, OrderIndependentOCT) .
   - **OCT\_FairnessEpsilonCons.ipynb**: Runnable fairness‑constrained experiments.
-  - **OCT\_IP\_Cuts.ipynb**: Runnable notebook for the experiements with cuts, parameters adjusted at the top.
+  - **OCT\_IP\_Cuts.ipynb**: Runnable notebook for the experiments with cuts, parameters adjusted at the top.
   - **Supporting** (invoked by the main notebooks):\
     `OCT_OrderIndependentModel_Compact.ipynb`,\
     `OCT_OrderedModel_Compact.ipynb`,\
