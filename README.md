@@ -52,7 +52,7 @@ data_list = [
     'monks-3','nursery','seismic-bumps','tae','tic-tac-toe','titanic',
     'wdbc','wine','NHPA'
 ]
-data_list.sort()
+
 fold_list = list(range(11))
 depth_list = [2, 3, 4]
 
