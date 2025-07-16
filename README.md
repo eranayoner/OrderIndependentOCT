@@ -6,7 +6,7 @@
 
 - **OrderIndependentOCT.py**: Main script (CLI) that contains the function which selects and runs OCT methods via Papermill.
 - **setup.py**: Builds the Cython extension (`Pricing_Branching`).
-- **requirements.txt**: Lists all dependencies.
+- **Requirements.txt**: Lists all dependencies.
 - **Datasets/**: CSVs organized as `<dataset>/fold=<n>_train.csv` and `fold=<n>_test.csv`.
 - **Notebooks/**:
   - **OrderIndependentOCT\_ExampleNotebook.ipynb**: Runnable end‑to‑end example (method can be chosen using the selection parameter, amongst CompactOCT -1- , POCT-2-, BPOCT-3-, or left as defualt -0- which uses the hybrid method described in the paper, OrderIndependentOCT) .
@@ -21,7 +21,7 @@
 
 ## Requirements
 
-Install dependencies via `requirements.txt`, or directly:
+Install dependencies via `Requirements.txt`, or directly:
 
 ```bash
 pip install Cython>=0.29 numpy pandas scipy scikit-learn gurobipy>=10.0.3 papermill more-itertools networkx matplotlib
@@ -38,7 +38,7 @@ python setup.py build_ext --inplace
 
 ### OrderIndependentOCT\_ExampleNotebook.ipynb
 
-In the example notebook, loop over datasets or add new ones (ensure they follow the `Datasets/<name>/fold=<n>_train.csv` structure):
+In the example notebook, go over preferred datasets or add new ones (ensure they follow the `Datasets/<name>/fold=<n>_train.csv` structure):
 
 ```python
 import pandas as pd
