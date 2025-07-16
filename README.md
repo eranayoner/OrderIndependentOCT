@@ -70,14 +70,12 @@ At the top of the fairness‐constraint notebook, set parameters:
 ```python
 parameters = {
     'fold': 1,
-    'dataset': 'kr-vs-kp',
     'd': 2,
     'epsilon': 1,            # initial fairness bound
-    'sensitive_features': [1, 2, 3]
 }
 
 data_list = ['nursery']      # select datasets
-data_list
-sensitive_features = [5]     # e.g. gender column index
+
+sensitive_features = [5]     # e.g. gender column index, can be a list
 ```
 
