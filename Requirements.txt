@@ -1,0 +1,10 @@
+Cython>=0.29
+numpy
+pandas
+scipy
+scikit-learn
+gurobipy>=10.0.3
+papermill
+more-itertools
+networkx
+matplotlib
