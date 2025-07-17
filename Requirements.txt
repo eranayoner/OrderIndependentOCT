@@ -1,0 +1,9 @@
+Cython
+numpy
+pandas
+scipy
+scikit-learn
+papermill
+more-itertools
+networkx
+matplotlib
