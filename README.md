@@ -62,9 +62,9 @@ OrderIndependentOCT(fold, dataset, depth)
 
  - Pass selection=0 for hybrid rule or 1/2/3 to force a specific OCT variant.
  - After running, inspect:
-     * Datasets/<dataset>/fold=<fold><output><depth>.txt  ← summary metrics for the method chosen by the hybrid approach or specified by the user, will also be printed on the screen
-     * Datasets/<dataset>/fold=<fold>_DecisionRules_<tag>_<depth>.txt  ← decision rules
-     * RunNotebooks/OCT<Variant>[…].ipynb  ← full notebook output
+     * Datasets/<dataset>/fold=```<fold><output><depth>```.txt  ← summary metrics for the method chosen by the hybrid approach or specified by the user, will also be printed on the screen
+     * Datasets/<dataset>/fold=<fold>_DecisionRules```_<tag>_<depth>```.txt  ← decision rules
+     * RunNotebooks/OCT```<Variant>[…]```.ipynb  ← full notebook output
 
 ### OCT\_FairnessEpsilonCons.ipynb
 
