@@ -59,7 +59,7 @@ depth_list = [2, 3, 4]
 # Example run
 fold    = 1
 depth   = 2
-dataset = 'monks-1'
+dataset = 'kr-vs-kp'
 OrderIndependentOCT(fold, dataset, depth)
 ```
 
