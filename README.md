@@ -12,7 +12,7 @@
   - **OrderIndependentOCT\_ExampleNotebook.ipynb**: Runnable end‑to‑end example (method can be chosen using the selection parameter, amongst CompactOCT -1- , POCT -2-, BPOCT -3-, or left as default -0- which uses the hybrid method described in the paper, OrderIndependentOCT). Strongly recommended to be the first file to experiment with as it contains further installation and output interpretation directions. 
   - **OCT\_OCT\_OrderedModel\_Compact.ipynb**: Runnable ordered CompactOCT formulation, to compare against the order-independent version,  parameters adjusted at the top cell (Section 3.2).
   - **OCT\_IP\_Cuts.ipynb**: Runnable notebook for the experiments with tightening cuts proposed in the manuscript, parameters adjusted at the top cell (Section 3.6).
-  - **OCT\_FairnessEpsilonCons.ipynb**: Runnable fairness‑constrained experiments (Section 4).
+  - **OCT\_FairnessEpsilonCons.ipynb**: Runnable notebook containining the $\epsilon$-constraint framework for fairness experiments (Section 4).
   - **Supporting** (invoked by the main notebooks):\
     `OCT_OrderIndependentModel_Compact.ipynb`,\
     `OCT_IP.ipynb`,\
