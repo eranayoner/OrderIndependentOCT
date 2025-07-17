@@ -77,7 +77,7 @@ parameters = {
     'epsilon': 1,            # initial fairness bound
 }
 
-data_list = ['nursery']      # select datasets
+data_list = ['NHPA']      # select datasets
 
 sensitive_features = [5]     # e.g. gender column index, can be a list of features
 ```
