@@ -4,28 +4,25 @@
 
 ## Files
 
-- **OrderIndependentOCT.py**: Main script (CLI) that contains the function which selects and runs OCT methods via Papermill.
+- **OrderIndependentOCT.py**: Main script that contains the function which selects and runs OCT methods via Papermill.
 - **setup.py**: Builds the Cython extension (`Pricing_Branching`).
 - **Requirements.txt**: Lists all dependencies.
 - **Datasets/**: CSVs organized as `<dataset>/fold=<n>_train.csv` and `fold=<n>_test.csv`.
 - **Notebooks/**:
-  - **OrderIndependentOCT\_ExampleNotebook.ipynb**: Runnable end‑to‑end example (method can be chosen using the selection parameter, amongst CompactOCT -1- , POCT-2-, BPOCT-3-, or left as default -0- which uses the hybrid method described in the paper, OrderIndependentOCT) .
-  - **OCT\_FairnessEpsilonCons.ipynb**: Runnable fairness‑constrained experiments.
-  - **OCT\_IP\_Cuts.ipynb**: Runnable notebook for the experiments with cuts, parameters adjusted at the top.
+  - **OrderIndependentOCT\_ExampleNotebook.ipynb**: Runnable end‑to‑end example (method can be chosen using the selection parameter, amongst CompactOCT -1- , POCT-2-, BPOCT-3-, or left as default -0- which uses the hybrid method described in the paper, OrderIndependentOCT). Strongly recommended to be the first file to experiment with as it contains further installation and output interpretation directions. 
+  - **OCT\_OCT\_OrderedModel\_Compact.ipynb**: Runnable ordered CompactOCT formulation, to compare against the order-independent version,  parameters adjusted at the top cell (Section 3.2).
+  - **OCT\_IP\_Cuts.ipynb**: Runnable notebook for the experiments with tightening cuts proposed in the manuscript, parameters adjusted at the top cell (Section 3.6).
+  - **OCT\_FairnessEpsilonCons.ipynb**: Runnable fairness‑constrained experiments (Section 3.2).
   - **Supporting** (invoked by the main notebooks):\
     `OCT_OrderIndependentModel_Compact.ipynb`,\
-    `OCT_OrderedModel_Compact.ipynb`,\
     `OCT_IP.ipynb`,\
     `OCT_BnP.ipynb`,\
     `OCT_Fairness_IP.ipynb`.
 
 ## Requirements
 
-Install dependencies via `Requirements.txt`, or directly:
+Install dependencies via `Requirements.txt`, or directly by running the setup cells in the example notebook file.
 
-```bash
-pip install Cython>=0.29 numpy pandas scipy scikit-learn gurobipy>=10.0.3 papermill more-itertools networkx matplotlib
-```
 
 ## Installation
 
@@ -38,7 +35,7 @@ python setup.py build_ext --inplace
 
 ### OrderIndependentOCT\_ExampleNotebook.ipynb
 
-In the example notebook, go over preferred datasets or add new ones (ensure they follow the `Datasets/<name>/fold=<n>_train.csv` structure):
+In the example notebook, go over existing datasets or add new ones (ensure they follow the `Datasets/<name>/fold=<n>_train.csv` structure):
 
 ```python
 import pandas as pd
@@ -63,6 +60,12 @@ dataset = 'kr-vs-kp'
 OrderIndependentOCT(fold, dataset, depth)
 ```
 
+ - Pass selection=0 for hybrid rule or 1/2/3 to force a specific OCT variant.
+ - After running, inspect:
+     * Datasets/<dataset>/fold=<fold><output><depth>.txt  ← summary metrics for the method chosen by the hybrid approach or specified by the user, will also be printed on the screen
+     * Datasets/<dataset>/fold=<fold>_DecisionRules_<tag>_<depth>.txt  ← decision rules
+     * RunNotebooks/OCT<Variant>[…].ipynb  ← full notebook output
+
 ### OCT\_FairnessEpsilonCons.ipynb
 
 At the top of the fairness‐constraint notebook, set parameters:
@@ -76,6 +79,6 @@ parameters = {
 
 data_list = ['nursery']      # select datasets
 
-sensitive_features = [5]     # e.g. gender column index, can be a list
+sensitive_features = [5]     # e.g. gender column index, can be a list of features
 ```
 
