@@ -70,14 +70,60 @@ At the top of the fairness‐constraint notebook, set parameters:
 ```python
 parameters = {
     'fold': 1,
-    'dataset': 'kr-vs-kp',
+    'dataset': 'NHPA',
     'd': 2,
     'epsilon': 1,            # initial fairness bound
-    'sensitive_features': [1, 2, 3]
+    'sensitive_features': [5] # e.g. gender column index
 }
 
+another example:
 data_list = ['nursery']      # select datasets
 data_list
-sensitive_features = [5]     # e.g. gender column index
+sensitive_features = [38,39,40,41,42]     # e.g. parent's occupation
 ```
 
+
+
+
+## Reproducing Experiments
+
+To reproduce experimental results from the manuscript (e.g., Table 8), use the `OrderIndependentOCT.py` command-line interface or the provided example notebook.
+
+### CLI Usage
+```bash
+python OrderIndependentOCT.py <dataset> <fold> <depth> <selection>
+```
+- **dataset**: Name of the dataset folder in `Datasets/`.
+- **fold**: Fold index (1-10).
+- **depth**: Depth of the tree (e.g., 2, 3, 4).
+- **selection**:
+    - `0`: Hybrid method (**OrderIndependentOCT**) - selects the best method automatically.
+    - `1`: Compact Formulation (**CompactOCT**).
+    - `2`: Partial OCT (**POCT**).
+    - `3`: Branch-and-Price OCT (**BPOCT**).
+
+**Example: Reproducing a row for 'monks-1' at depth 2 using BPOCT:**
+```bash
+python OrderIndependentOCT.py monks-1 1 2 3
+```
+
+### Mapping Code to Methods
+
+| Feature | Code / Notebook | Description |
+| :--- | :--- | :--- |
+| **Order Independent Hybrid** | `OrderIndependentOCT.py` | Orchestrates the hybrid method, choosing between Compact, POCT, and BPOCT based on problem size. |
+| **Compact Formulation** | `OCT_OrderIndependentModel_Compact.ipynb` | Implements the flow-based compact formulation.|
+| **Pattern OCT (POCT)** | `OCT_IP.ipynb` | Implements the formulation for Pattern-based Optimal Classification Trees. |
+| **Branch-and-Price (BPOCT)** | `OCT_BnP.ipynb` | Implements the Branch-and-Price algorithm with Beam Search for solving pricing problems. |
+| **Fairness Constraints** | `OCT_FairnessEpsilonCons.ipynb` | Implements fairness-constrained OCT experiments using $\epsilon$-constraint method. |
+
+### Reproduction Mapping for Manuscript Tables
+
+| Table | Content | Method / selection | Script / Notebook |
+| :--- | :--- | :--- | :--- |
+| **Table 8** | BPOCT vs EnumOCT | `selection=3` for BPOCT <br> `selection=2` for EnumOCT | `OrderIndependentOCT.py` |
+| **Table 9 & 10** | Method Comparisons | `selection=0` for Hybrid / OrderIndOCT <br> `selection=1` for CompactOCT <br> `selection=2` for EnumOCT <br> `selection=3` for BPOCT <br> *(Note: The "Root" baseline metric can be extracted from the `selection=3` console logs or the executed papermill run-logs permanently saved in `RunNotebooks/`. All parsed raw results are saved side-by-side as `.txt` files in their respective `Datasets/<dataset>` subfolders.)*| `OrderIndependentOCT.py` |
+| **Table 15** | Effects of Cuts | N/A | `OCT_IP_Cuts.ipynb` |
+| **Table 16** | Fairness results | N/A | `OCT_FairnessEpsilonCons.ipynb` |
+
+To reproduce a specific row from Table 8, 9, or 10 you may use the CLI as described above with the corresponding `selection` code.

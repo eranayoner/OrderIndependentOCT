@@ -7,18 +7,18 @@
 # Function to classify based on the decision tree rules
 def classify_method(row):
     if row['depth'] <= 2:
-        if row['# of Features'] <= 249:
+        if row['# of Features'] <= 250:
             return 2  # Class 2
         else:
             return 1  # Class 1
     else:
-        if row['# of Datapoints'] <= 1499:
-            if row['# of Features'] <= 14:
+        if row['# of Datapoints'] <= 1500:
+            if row['# of Features'] <= 16:
                 return 2  # Class 2
             else:
                 return 1  # Class 1
         else:
-            if row['# of Features'] <= 49:
+            if row['# of Features'] <= 50:
                 return 2  # Class 2
             else:
                 return 3  # Class 3
@@ -27,11 +27,11 @@ def classify_method(row):
 # BP_OCT	P_OCT	CompactOCT
 def choose(res):
     if res == 1:
-        return 'CompactOCT','_OrderIndependentModel_Compact','_resCompact_','Compact'
+        return 'CompactOCT','_OrderIndependentModel_Compact','_resCompactOrderIndependent_','Compact'
     elif res == 2:
         return 'P_OCT','_IP','_res_IP_','IP'
     elif res== 3:
-        return 'BP_OCT','_BnP','res_BnP_', 'BnP'
+        return 'BP_OCT','_BnP','_res_BnP_', 'BnP'
     
 
 
@@ -81,8 +81,26 @@ def OrderIndependentOCT(fold,dataset, depth, trace=0,selection=0):
                 parameters=parameters
             )
             print('Done')
-        except:
-            print('An exception occured...')
+        except Exception as e:
+            print(f'\n[ERROR] An exception occurred during notebook execution: {e}')
+            print('-> ADVICE: The chosen depth might be too complex for this solver on this dataset. Please try a lower depth.')
+            print('\n--- Fallback: Base CART solution ---')
+            try:
+                from sklearn.tree import DecisionTreeClassifier
+                from sklearn.metrics import accuracy_score
+                train_data = pd.read_csv("./Datasets/"+dataset+"/fold="+str(fold)+"_train.csv")
+                test_data = pd.read_csv("./Datasets/"+dataset+"/fold="+str(fold)+"_test.csv")
+                X_train = train_data.iloc[:, :-1]
+                y_train = train_data.iloc[:, -1]
+                X_test = test_data.iloc[:, :-1]
+                y_test = test_data.iloc[:, -1]
+                clf = DecisionTreeClassifier(max_depth=depth, random_state=42)
+                clf.fit(X_train, y_train)
+                print(f"CART Train Accuracy: {accuracy_score(y_train, clf.predict(X_train)):.2%}")
+                print(f"CART Test Accuracy:  {accuracy_score(y_test, clf.predict(X_test)):.2%}")
+            except Exception as cart_e:
+                print('Could not calculate CART.')
+            sys.exit(1)
         
 
         relpath="./Datasets/"+dataset +"/fold="+str(fold)
@@ -100,7 +118,7 @@ def OrderIndependentOCT(fold,dataset, depth, trace=0,selection=0):
         # read decision rules found
         filename = f"{relpath}_DecisionRules_{decision_rules_output}_{depth}.txt"
 
-        print('Decision rules for rach leaf are as follows:')
+        print('Decision rules for each leaf are as follows:')
         with open(filename, 'r') as f:
             decision_rules = f.read()
         print(decision_rules)
@@ -108,3 +126,7 @@ def OrderIndependentOCT(fold,dataset, depth, trace=0,selection=0):
         
 
 
+
+import sys
+if __name__== '__main__':
+    OrderIndependentOCT(int(sys.argv[2]),sys.argv[1],int(sys.argv[3]),selection=int(sys.argv[4])) # argv[1] is dataset, argv[2] is fold, argv[3] is depth
