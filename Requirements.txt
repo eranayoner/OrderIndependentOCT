@@ -1,10 +1,12 @@
 Cython>=0.29
+setuptools
 numpy
 pandas
 scipy
 scikit-learn
 gurobipy>=10.0.3
 papermill
+ipykernel
 more-itertools
 networkx
 matplotlib
