@@ -40,6 +40,15 @@ def choose(res):
 import papermill as pm
 import pandas as pd
 import numpy as np
+import warnings
+import os
+os.environ["PYDEVD_DISABLE_FILE_VALIDATION"] = "1"
+os.environ["PYTHONWARNINGS"] = "ignore"
+warnings.filterwarnings("ignore", module="papermill")
+import logging
+logging.getLogger("papermill").setLevel(logging.ERROR)
+logging.getLogger("papermill.engine").setLevel(logging.ERROR)
+logging.getLogger("papermill.clientwrap").setLevel(logging.ERROR)
 
 
 
@@ -73,6 +82,21 @@ def OrderIndependentOCT(fold,dataset, depth, trace=0,selection=0):
             print(method, 'selected by user...')
         
         output_notebook_path = f'RunNotebooks/OCT'+extention+str(list(parameters.values()))+'.ipynb'  # Specify output path
+        
+        import sys
+        class FilteredStderr:
+            def __init__(self, orig_stderr):
+                self.orig_stderr = orig_stderr
+            def write(self, s):
+                if "pkg_resources is deprecated" in s or "pydevd_plugins" in s or "debugpy" in s:
+                    return
+                self.orig_stderr.write(s)
+            def flush(self):
+                self.orig_stderr.flush()
+        
+        original_stderr = sys.stderr
+        sys.stderr = FilteredStderr(sys.stderr)
+        
         try:
             print('OCT'+extention+'.ipynb')
             pm.execute_notebook(
@@ -101,6 +125,9 @@ def OrderIndependentOCT(fold,dataset, depth, trace=0,selection=0):
             except Exception as cart_e:
                 print('Could not calculate CART.')
             sys.exit(1)
+        finally:
+            sys.stderr = original_stderr
+
         
 
         relpath="./Datasets/"+dataset +"/fold="+str(fold)
