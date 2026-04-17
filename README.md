@@ -83,6 +83,21 @@ data_list
 sensitive_features = [38,39,40,41,42]     # e.g. parent's occupation
 ```
 
+### Table 7: Ordered vs Order Independent Formulation
+
+To reproduce a fold comparison for Table 7, directly execute the standard parameters block built into the two formulation notebooks:
+
+```python
+# In OCT_OrderedModel_Compact.ipynb AND OCT_OrderIndependentModel_Compact.ipynb
+# Parameters
+fold = 1
+dataset = 'monks-1'
+D = 2 # depth
+d = 2 
+trace = 0
+```
+Run all cells in both notebooks to compare their execution metrics and objective bounds side-by-side.
+
 
 
 
@@ -122,9 +137,10 @@ python OrderIndependentOCT.py monks-1 1 2 3
 
 | Table | Content | Method / selection | Script / Notebook |
 | :--- | :--- | :--- | :--- |
+| **Table 7** | Ordered vs Order Independent Formulation | N/A | `OCT_OrderedModel_Compact.ipynb` <br> `OCT_OrderIndependentModel_Compact.ipynb` |
 | **Table 8** | BPOCT vs EnumOCT | `selection=3` for BPOCT <br> `selection=2` for EnumOCT | `OrderIndependentOCT.py` |
 | **Table 9 & 10** | Method Comparisons | `selection=0` for Hybrid / OrderIndOCT <br> `selection=1` for CompactOCT <br> `selection=2` for EnumOCT <br> `selection=3` for BPOCT <br> *(Note: The "Root" baseline metric can be extracted from the `selection=3` console logs or the executed papermill run-logs permanently saved in `RunNotebooks/`. All parsed raw results are saved side-by-side as `.txt` files in their respective `Datasets/<dataset>` subfolders.)*| `OrderIndependentOCT.py` |
 | **Table 15** | Effects of Cuts | N/A | `OCT_IP_Cuts.ipynb` |
 | **Table 16** | Fairness results | N/A | `OCT_FairnessEpsilonCons.ipynb` |
 
-To reproduce a specific row from Table 8, 9, or 10 you may use the CLI as described above with the corresponding `selection` code.
+To reproduce a specific row from Table 8, 9, or 10 you may use the CLI as described above with the corresponding `selection` code. For Table 7, 15, and 16, execute the designated notebooks directly after configuring the parameter block at the top of the file.
