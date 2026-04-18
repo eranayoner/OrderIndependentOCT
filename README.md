@@ -17,7 +17,9 @@ https://github.com/user-attachments/assets/a96c7ddd-ded0-47f9-a522-12888990cd76
 <details>
   <summary><b>2. Reproduction of Table 7 (Ordered vs Order Independent)</b></summary>
   <br>
+  
 https://github.com/user-attachments/assets/607db555-d833-4cee-a9b0-f0fcb28c5da4
+
   <p><i>Executing the compact notebook runs demonstrating the bounds and performance side-by-side.</i></p>
 </details>
 
