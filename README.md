@@ -8,7 +8,9 @@
 <details>
   <summary><b>1. Environment Installation & Setup</b></summary>
   <br>
-  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/installation_video.mp4" controls="controls" style="max-width: 100%;"></video>
+
+https://github.com/user-attachments/assets/a96c7ddd-ded0-47f9-a522-12888990cd76
+
   <p><i>A walk-through on installing dependencies via Requirements.txt and building the Cython `Pricing_Branching` extensions.</i></p>
 </details>
 
