@@ -1,6 +1,51 @@
 # Order Independent Optimal Classification Trees (OCT) Repository
 
+<div align="center">
+  <h2>📹 Walkthrough & Reproduction Videos</h2>
+  <p><i>Expand any section below to view a step-by-step video demonstration of our environment setup and table-by-table reproduction.</i></p>
+</div>
 
+<details>
+  <summary><b>1. Environment Installation & Setup</b></summary>
+  <br>
+  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/installation_video.mp4" controls="controls" style="max-width: 100%;"></video>
+  <p><i>A walk-through on installing dependencies via Requirements.txt and building the Cython `Pricing_Branching` extensions.</i></p>
+</details>
+
+<details>
+  <summary><b>2. Reproduction of Table 7 (Ordered vs Order Independent)</b></summary>
+  <br>
+  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_7_video.mp4" controls="controls" style="max-width: 100%;"></video>
+  <p><i>Executing the compact notebook runs demonstrating the bounds and performance side-by-side.</i></p>
+</details>
+
+<details>
+  <summary><b>3. Reproduction of Table 8 (BPOCT vs EnumOCT)</b></summary>
+  <br>
+  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_8_video.mp4" controls="controls" style="max-width: 100%;"></video>
+  <p><i>Using the CLI to reproduce the BPOCT execution metrics dynamically.</i></p>
+</details>
+
+<details>
+  <summary><b>4. Reproduction of Tables 9 & 10 (Method Comparisons)</b></summary>
+  <br>
+  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_9_10_video.mp4" controls="controls" style="max-width: 100%;"></video>
+  <p><i>Executing the wrapper script to loop through OrderIndOCT, CompactOCT, EnumOCT, and BPOCT.</i></p>
+</details>
+
+<details>
+  <summary><b>5. Reproduction of Table 15 (Effects of Cuts)</b></summary>
+  <br>
+  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_15_video.mp4" controls="controls" style="max-width: 100%;"></video>
+  <p><i>Running the `OCT_IP_Cuts.ipynb` notebook to generate the branch-and-bound cut metrics.</i></p>
+</details>
+
+<details>
+  <summary><b>6. Reproduction of Table 16 (Fairness $\epsilon$-constraints)</b></summary>
+  <br>
+  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_16_video.mp4" controls="controls" style="max-width: 100%;"></video>
+  <p><i>Running the `OCT_FairnessEpsilonCons.ipynb` parameters cell mapping to the fairness metrics.</i></p>
+</details>
 
 ## Files
 
