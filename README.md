@@ -190,7 +190,7 @@ python OrderIndependentOCT.py monks-1 1 2 3
 
 | Table | Content | Method / selection | Script / Notebook |
 | :--- | :--- | :--- | :--- |
-| **Table 7** | Ordered vs Order Independent Formulation | N/A | `OCT_OrderedModel_Compact.ipynb` <br> `OCT_OrderIndependentModel_Compact.ipynb` |
+| **Table 7** | Ordered vs Order Independent Formulation | N/A | `OCT_OrderedModel_Compact.ipynb` <br> `OCT_OrderIndependentModel_Compact.ipynb` <br> Results can be recovered from tex files under the dataset ran. The res_ files will have Training Accuracy/ Test Accuracy/ Time/ Optimality gap written at each line|
 | **Table 8** | BPOCT vs EnumOCT | `selection=3` for BPOCT <br> `selection=2` for EnumOCT | `OrderIndependentOCT.py` |
 | **Table 9 & 10** | Method Comparisons | `selection=0` for Hybrid / OrderIndOCT <br> `selection=1` for CompactOCT <br> `selection=2` for EnumOCT <br> `selection=3` for BPOCT <br> *(Note: The "Root" baseline metric can be extracted from the `selection=3` console logs or the executed papermill run-logs permanently saved in `RunNotebooks/`. All parsed raw results are saved side-by-side as `.txt` files in their respective `Datasets/<dataset>` subfolders.)*| `OrderIndependentOCT.py` |
 | **Table 15** | Effects of Cuts | N/A | `OCT_IP_Cuts.ipynb` |
