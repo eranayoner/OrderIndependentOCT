@@ -36,7 +36,11 @@ https://github.com/user-attachments/assets/85af4098-236d-482e-bfe6-ac7084e4af13
 <details>
   <summary><b>4. Reproduction of Tables 9 & 10 (Method Comparisons)</b></summary>
   <br>
-  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_9_10_video.mp4" controls="controls" style="max-width: 100%;"></video>
+ 
+
+https://github.com/user-attachments/assets/cdfb51a4-5aa9-41da-a4fa-ef980316a76a
+
+
   <p><i>Executing the wrapper script to loop through OrderIndOCT, CompactOCT, EnumOCT, and BPOCT.</i></p>
 </details>
 
