@@ -26,7 +26,10 @@ https://github.com/user-attachments/assets/607db555-d833-4cee-a9b0-f0fcb28c5da4
 <details>
   <summary><b>3. Reproduction of Table 8 (BPOCT vs EnumOCT)</b></summary>
   <br>
-  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_8_video.mp4" controls="controls" style="max-width: 100%;"></video>
+
+https://github.com/user-attachments/assets/85af4098-236d-482e-bfe6-ac7084e4af13
+
+
   <p><i>Using the CLI to reproduce the BPOCT execution metrics dynamically.</i></p>
 </details>
 
