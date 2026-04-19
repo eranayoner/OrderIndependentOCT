@@ -61,7 +61,12 @@ https://github.com/user-attachments/assets/cdfb51a4-5aa9-41da-a4fa-ef980316a76a
 <details>
   <summary><b>7. Higher depths trial with D=5 </b></summary>
   <br>
-  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_16_video.mp4" controls="controls" style="max-width: 100%;"></video>
+
+  
+
+https://github.com/user-attachments/assets/c8e74e7a-c905-4104-bad0-f78c43504bc6
+
+
 </details>
 
 ## Files
