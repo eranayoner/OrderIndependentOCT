@@ -47,8 +47,13 @@ https://github.com/user-attachments/assets/cdfb51a4-5aa9-41da-a4fa-ef980316a76a
 <details>
   <summary><b>5. Reproduction of Table 15 (Effects of Cuts)</b></summary>
   <br>
-  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_15_video.mp4" controls="controls" style="max-width: 100%;"></video>
-  <p><i>Running the `OCT_IP_Cuts.ipynb` notebook to generate the branch-and-bound cut metrics.</i></p>
+
+
+
+https://github.com/user-attachments/assets/d1758037-adc3-42ec-a9eb-1a58504eb1a8
+
+  
+  <p><i>Running the `OCT_IP_Cuts.ipynb` notebook to generate the IP with cuts metrics.</i></p>
 </details>
 
 <details>
