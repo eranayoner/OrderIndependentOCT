@@ -58,9 +58,15 @@ https://github.com/user-attachments/assets/72535eb1-886c-4561-a9ab-ee0ab8bb3e5c
 </details>
 
 <details>
-  <summary><b>6. Reproduction of Table 16 (Fairness $\epsilon$-constraints)</b></summary>
+  <summary><b>6. Reproduction of Table 16 (Fairness $\epsilon$-constraint)</b></summary>
   <br>
-  <video src="https://github.com/eranayoner/OrderIndependentOCT/raw/main/assets/table_16_video.mp4" controls="controls" style="max-width: 100%;"></video>
+
+
+
+https://github.com/user-attachments/assets/7736d6c0-1cff-4655-b1b6-168e8e07cb6c
+
+
+
   <p><i>Running the `OCT_FairnessEpsilonCons.ipynb` parameters cell mapping to the fairness metrics.</i></p>
 </details>
 
