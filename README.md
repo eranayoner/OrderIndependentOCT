@@ -50,7 +50,8 @@ https://github.com/user-attachments/assets/cdfb51a4-5aa9-41da-a4fa-ef980316a76a
 
 
 
-https://github.com/user-attachments/assets/d1758037-adc3-42ec-a9eb-1a58504eb1a8
+https://github.com/user-attachments/assets/72535eb1-886c-4561-a9ab-ee0ab8bb3e5c
+
 
   
   <p><i>Running the `OCT_IP_Cuts.ipynb` notebook to generate the IP with cuts metrics.</i></p>
